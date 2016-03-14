@@ -159,8 +159,7 @@ func (m *Message) Command() string {
 	if !m.IsCommand() {
 		return ""
 	}
-
-	command := strings.SplitN(m.Text, " ", 2)[0][1:]
+	command := strings.SplitN(m.Text, " ", 2)[0]
 
 	if i := strings.Index(command, "@"); i != -1 {
 		command = command[:i]
